@@ -1,4 +1,4 @@
-import { pool } from "../database/conexion.js"
+import { pool } from "../database/Conexion.js"
 
 export const listartipo = async (req, res) =>{
     try{

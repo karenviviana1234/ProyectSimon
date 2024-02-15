@@ -1,4 +1,4 @@
-import { pool } from "../database/conexion.js";
+import { pool } from "../database/Conexion.js";
 
 // Listar un usuario 
 export const listarUsuarios = async (req, res) => {
