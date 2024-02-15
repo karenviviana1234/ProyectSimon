@@ -3,11 +3,11 @@ import {registrar,  actualizar, desactivar, buscar, listar } from '../controller
 
 const rutaCultivos = Router();
 
-rutaCultivos.get('/cultivos', listar);
-rutaCultivos.post('/cultivos', registrar);
-rutaCultivos.get('/cultivos/:id_cultivo', buscar); 
-rutaCultivos.put('/cultivos/:id_cultivo', actualizar);
-rutaCultivos.post('/cultivos/:id_cultivo', desactivar);
+rutaCultivos.get('/listar', listar);
+rutaCultivos.post('/registrar', registrar);
+rutaCultivos.get('/buscar/:id_cultivo', buscar); 
+rutaCultivos.put('/actualizar/:id_cultivo', actualizar);
+rutaCultivos.post('/desactivar/:id_cultivo', desactivar);
 
 
 export default rutaCultivos;

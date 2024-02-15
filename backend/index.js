@@ -5,14 +5,14 @@ import rutaCultivos from "./src/routes/routes.cultivos.js";
 
 
 const servidor = express();
-const port = 4000
+const port = 3333
 
 servidor.use(bodyParser.json());
 servidor.use(bodyParser.urlencoded({extended:false}));
 
 //rutas
-servidor.use(rutaFincas)
-servidor.use(rutaCultivos)
+servidor.use( '/fincas',rutaFincas)
+servidor.use( '/cultivos',rutaCultivos)
 
 servidor.listen(port,()=>{
     console.log('Sirve el puerto 3333')

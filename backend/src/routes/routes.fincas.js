@@ -3,11 +3,11 @@ import {registrar,  actualizar, desactivar, buscar, listar } from '../controller
 
 const rutaFincas = Router();
 
-rutaFincas.get('/listarFinca', listar);
-rutaFincas.post('/fincas', registrar);
-rutaFincas.get('/fincas/:id_finca', buscar); 
-rutaFincas.put('/fincas/:id_finca', actualizar);
-rutaFincas.post('/fincas/:id_finca', desactivar);
+rutaFincas.get('/listar', listar);
+rutaFincas.post('/registrar', registrar);
+rutaFincas.get('/buscar/:id_finca', buscar); 
+rutaFincas.put('/actualizar/:id_finca', actualizar);
+rutaFincas.post('/desactivar/:id_finca', desactivar);
 
 
 export default rutaFincas;
