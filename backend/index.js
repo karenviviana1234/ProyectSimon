@@ -5,14 +5,23 @@ import rutaCultivos from "./src/routes/routes.cultivos.js";
 
 
 const servidor = express();
+<<<<<<< HEAD
 const port = 3333
+=======
+const port = 4000
+>>>>>>> devkfam
 
 servidor.use(bodyParser.json());
 servidor.use(bodyParser.urlencoded({extended:false}));
 
 //rutas
+<<<<<<< HEAD
 servidor.use( '/fincas',rutaFincas)
 servidor.use( '/cultivos',rutaCultivos)
+=======
+servidor.use(rutaFincas)
+servidor.use(rutaCultivos)
+>>>>>>> devkfam
 
 servidor.listen(port,()=>{
     console.log('Sirve el puerto 3333')
