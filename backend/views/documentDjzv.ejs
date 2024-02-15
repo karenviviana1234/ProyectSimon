@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentación de la Api</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/public/estilos.css">
 </head>
 <body>
     <h1>Documentación de la Api</h1>
@@ -312,45 +312,13 @@
       </div>
     </div>
     
-    <!-- <hr>
-    <h2>Requerimiento 1 Documentación del ENDPOINT USUARIO</h2>
-    <table>
-     <tr><td>NUMERO</td><td>1</td></tr>
-     <tr><td>NOMBRE DEL SERVICIO</td><td>Listar Usuarios</td></tr>
-     <tr><td>URI</td><td>/usuarios/listar</td></tr>
-     <tr><td>DESCRIPCIÓN</td><td>Permite listar los usuarios registrados en a base de datos</td></tr>
-     <tr><td>VERBO HTTP</td><td>GET</td></tr>
-     <tr><td>HEADER</td><td>NULL</td></tr>
-     <tr><td>USUARIOS</td><td>Administrador</td></tr>
-     <tr><td>PETICIÓN BODY</td><td>{nombre: 'Juanito'}</td></tr>
-     <tr><td>RESPUESTA JSON</td><td>
-        Correcto:
-        Status: 200
-        json:
-        {
-        "idUsuario": 3,
-        "nombres": "kevin",
-        "direccion": "cr19n6-04",
-        "telefono": "3193103884",
-        "correo": "olave123@gmail.com",
-        "rol": "usuario",
-        "password": "1245"
-    }
-    Incorrecto:
-    status: 404
-    body: {
-        status: 404,
-        mesasage: "No se encontro usuarios registrados"
-    }
-    Error:
-    status: 500,
-    body {
-        status: 500,
-        message: "Error en el sistema" +Error
-    }
-</td></tr>
-    </table> -->
+   
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<%- include('../views/documentcostos.ejs') %>
+<%- include('../views/documentactividad.ejs') %>
+<%- include('../views/documenttipoactividad.ejs') %>
+<%- include('../views/documentFincasSdva.ejs') %>
+<%- include('../views/documentCultivoSdva.ejs') %>
 </body>
 </html>

@@ -5,6 +5,7 @@ import rutaCultivos from "./src/routes/routes.cultivos.js";
 import rutaActividad from "./src/routes/routes.actividad.js";
 import rutaTipoActividad from "./src/routes/routes.tipoactividad.js";
 import rutaCostos from "./src/routes/routes.costos.js";
+import rutasUsuarios from "./src/routes/routes.usuarios.js";
 
 
 const servidor = express();
@@ -14,6 +15,8 @@ servidor.use(bodyParser.json());
 servidor.use(bodyParser.urlencoded({extended:false}));
 
 //rutas
+
+servidor.use( '/usuarios',rutasUsuarios)
 servidor.use( '/fincas',rutaFincas)
 servidor.use( '/cultivos',rutaCultivos)
 servidor.use( rutaActividad)
