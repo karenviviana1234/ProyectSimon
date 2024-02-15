@@ -34,5 +34,5 @@ servidor.set('views','./views');
 servidor.use(express.static('./public'));
 
 servidor.get('/document', (req,res)=>{
-    res.render('documentDjzv.ejs')
+    res.render('document.ejs')
 })
