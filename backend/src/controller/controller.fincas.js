@@ -1,5 +1,5 @@
 import {query} from 'express';
-import { pool } from '../database/Conexion.js';
+import { pool } from '../database/conexion.js';
 
 export const listar = async (req,res) => {
     try{
