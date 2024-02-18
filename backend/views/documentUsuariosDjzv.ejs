@@ -63,7 +63,7 @@
     } </td></tr>
   <tr><td>Respuesta json</td>  <td>
     Correcto:
-    Status: 200
+    Status: 200 OK
     json:
     {
       "status": 200,
@@ -97,25 +97,26 @@
   <tr><td>Request json</td>  <td> </td></tr>
   <tr><td>Respuesta json</td>  <td>
     Correcto:
-    Status: 200
+    Status: 200 OK
     json:
     {
+      "status": 200,
       "mensaje": "Su Usuario se desactivó con éxito"
     }
   <br>
 Incorrecto:
 
-Status: 404
+Status: 404  Not Found
 body:{
-  "status": 404
+  "status": 404,
   "mensaje": "El usuario no se pudo desactivar"
 }
 <br>
 Error:
 
-Status: 500
+Status: 500 Internal Server Error
 json: {
-  status: 500
+  status: 500,
   "message" : "Error en el sistema"
 }
 </td></tr>
@@ -139,9 +140,10 @@ json: {
       }</td></tr>
   <tr><td>Respuesta json</td>  <td>
     Correcto:
-    Status: 200
+    Status: 200 OK
     json:
     {
+      status: 200,
       "mensaje": "El usuario ha sido actualizado."
     }
   <br>
@@ -170,7 +172,7 @@ json: {
   <tr><td>Request json</td>  <td></td></tr>
   <tr><td>Respuesta json</td>  <td>
     Correcto:
-    Status: 200
+    Status: 200 OK
     json:
     [
     {
@@ -187,17 +189,17 @@ json: {
   <br>
 Incorrecto:
 
-Status: 404
+Status: 404 Internal Server Error
 body:{
-  "status": 404
+  "status": 404,
   "message" : "No se encontraron usuarios con ese ID"
 }
 <br>
 Error:
 
-Status: 500
+Status: 500 Internal Server Error
 json: {
-  status: 500
+  status: 500,
   "message" : "Error en el sistema"
 }
 </td></tr>
