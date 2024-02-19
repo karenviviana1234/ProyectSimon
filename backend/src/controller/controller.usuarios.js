@@ -15,15 +15,43 @@ export const listarUsuarios = async (req, res) => {
     } catch (error) {
         res.status(500).json({
             status:  500,
-            message: error.message
+            message: 'Error en el sistema'+error
         })
     }
 }
+//Buscar usuario
+export const buscarUsuario = async (req, res) => {
+    try {
+        const { id_ususario } = req.params;
+        const [result] = await pool.query("SELECT * FROM usuarios WHERE id_ususario=?", [id_ususario]);
 
+        if (result.length > 0) {
+            res.status(200).json(result);
+        } else {
+            res.status(404).json({
+                mensaje: "No se encontró un asuario con ese ID"
+            });
+        }
+    } catch (error) {
+        res.status(500).json({ 
+            status: 500, 
+            message: 'Error en el sistema: ' + error 
+        });
+    }
+};
 // Registrar un Usuario
 export const registrarUsuario = async (req, res) => {
     try {
         const {tipo_identificacion, numero_identifi,  nombre_usuari, numero_telefono, email, direccion_usuario } = req.body;
+
+        // Validar los datos del usuario estén presentes en el cuerpo de la solicitud
+        if (!tipo_identificacion || !numero_identifi || !nombre_usuari || !numero_telefono || !email || !direccion_usuario) {
+            return res.status(400).json({
+                status: 400,
+                message: 'Los campos son requeridos'
+            });
+        }
+
         const [result] = await pool.query('insert into usuarios ( tipo_identificacion, numero_identifi,  nombre_usuari, numero_telefono, email, direccion_usuario) values (?, ?, ?, ?, ?, ?)', [tipo_identificacion, numero_identifi,  nombre_usuari, email , numero_telefono , direccion_usuario]);
         if (result.affectedRows > 0) {
             res.status(200).json({
@@ -75,26 +103,26 @@ export const actualizarUsuario = async (req, res) => {
     }
 };
 
-// Eliminar Usuario
-export const eliminarUsuario = async (req, res) => {
+// Desactivar Usuario
+export const desactivarUsuario = async (req, res) => {
     try {
         const { id_ususario } = req.params;
-        const [result] = await pool.query("DELETE FROM usuarios WHERE id_ususario=?", [id_ususario]);
+        const [result] = await pool.query("UPDATE usuarios SET estado='inactivo' WHERE id_ususario=?", [id_ususario]);
         
         if (result.affectedRows >  0) {
             res.status(200).json({
-                "mensaje": "El usuario con el id "+id_ususario+" ha sido eliminado."
+                "mensaje": "El usuario con el id "+id_ususario+" ha sido desactivado."
             });
         } else {
             res.status(404).json({
                 status: 404,
-                "message": "No se pudo eliminar el usuario"
+                "message": "No se pudo desactivar el usuario"
             });
         }
     } catch (error) {
         res.status(500).json({
             status: 500,
-            message: error.message
+            message: 'Error en el sistema: '+error
         });
     }
 }
