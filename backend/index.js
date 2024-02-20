@@ -16,7 +16,7 @@ servidor.use(bodyParser.urlencoded({extended:false}));
 
 //rutas
 
-servidor.use( '/usuarios',rutasUsuarios)
+servidor.use( rutasUsuarios)
 servidor.use( '/fincas',rutaFincas)
 servidor.use( '/cultivos',rutaCultivos)
 servidor.use( rutaActividad)

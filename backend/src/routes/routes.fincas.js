@@ -7,7 +7,7 @@ rutaFincas.get('/listar', listar);
 rutaFincas.post('/registrar', registrar);
 rutaFincas.get('/buscar/:id_finca', buscar); 
 rutaFincas.put('/actualizar/:id_finca', actualizar);
-rutaFincas.post('/desactivar/:id_finca', desactivar);
+rutaFincas.delete('/desactivar/:id_finca', desactivar);
 
 
 export default rutaFincas;

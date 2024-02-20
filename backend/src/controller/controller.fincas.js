@@ -17,11 +17,11 @@ export const listar = async (req,res) => {
   
   export const registrar = async (req, res) =>{
     try{
-    const {nombre_propietario, nombre_propiedad,  direccion, dimenciones, divicion_por_lotes, limites_finca} = req.body;
+    const {nombre_propietario, nombre_propiedad,  direccion, dimenciones, divicion_por_lotes, limites_finca,fk_usuario_propiedad } = req.body;
   
-    let sql =  `INSERT INTO fincas (nombre_propietario, nombre_propiedad, direccion, dimenciones, divicion_por_lotes, limites_finca) VALUES (?, ?, ?, ?, ?, ?)`;
+    let sql =  `INSERT INTO fincas (nombre_propietario, nombre_propiedad, direccion, dimenciones, divicion_por_lotes, limites_finca,fk_usuario_propiedad) VALUES (?, ?, ?, ?, ?, ?, ?)`;
   
-    const [rows] = await pool.query(sql,[nombre_propietario, nombre_propiedad,  direccion, dimenciones, divicion_por_lotes, limites_finca]);
+    const [rows] = await pool.query(sql,[nombre_propietario, nombre_propiedad,  direccion, dimenciones, divicion_por_lotes, limites_finca,fk_usuario_propiedad ]);
     if (rows.affectedRows > 0) {
       res.status(200).json({'status':200,'message':'Registro exitoso de su finca'});
     }else{
