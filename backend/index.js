@@ -6,6 +6,7 @@ import rutaActividad from "./src/routes/routes.actividad.js";
 import rutaTipoActividad from "./src/routes/routes.tipoactividad.js";
 import rutaCostos from "./src/routes/routes.costos.js";
 import rutasUsuarios from "./src/routes/routes.usuarios.js";
+import rutaAlarma from "./src/routes/routes.alarma.js";
 
 
 const servidor = express();
@@ -22,6 +23,7 @@ servidor.use( '/cultivos',rutaCultivos)
 servidor.use( rutaActividad)
 servidor.use( rutaTipoActividad)
 servidor.use( rutaCostos)
+servidor.use(rutaAlarma)
 
 
 servidor.listen(port,()=>{
