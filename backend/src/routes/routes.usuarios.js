@@ -1,17 +1,16 @@
 import { Router } from "express"
-import  {actualizarUsuario, listarUsuarios, desactivarUsuario, registrarUsuario} from '../controller/controller.usuarios.js'
+import  {actualizarUsuario, listarUsuarios, buscarUsuario, desactivarUsuario, registrarUsuario} from '../controller/controller.usuarios.js'
 
 
-const rutasUsuarios = Router();
+const routesUsuarios = Router();
 
-rutasUsuarios.get('/listarUsuario', listarUsuarios);
-rutasUsuarios.get('/listarUsuario', listarUsuarios);
-rutasUsuarios.post('/registrarUsuario', registrarUsuario);
-rutasUsuarios.delete('/desactivarUsuario/:id_ususario', desactivarUsuario);
-rutasUsuarios.put('/actualizarUsuario/:id_ususario', actualizarUsuario);
+routesUsuarios.get('/listarUsuario', listarUsuarios);   
+routesUsuarios.get('/buscarUsuario/:id_ususario', buscarUsuario);
+routesUsuarios.post('/registrarUsuario', registrarUsuario);
+routesUsuarios.post('/desactivarUsuario/:id_ususario', desactivarUsuario);
+routesUsuarios.put('/actualizarUsuario/:id_ususario', actualizarUsuario);
 
-export default rutasUsuarios;
-
+export default routesUsuarios;
 
 
 

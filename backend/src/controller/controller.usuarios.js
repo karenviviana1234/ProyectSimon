@@ -29,6 +29,7 @@ export const buscarUsuario = async (req, res) => {
             res.status(200).json(result);
         } else {
             res.status(404).json({
+                status: 404,
                 mensaje: "No se encontró un asuario con ese ID"
             });
         }
@@ -87,6 +88,7 @@ export const actualizarUsuario = async (req, res) => {
 
         if (result.affectedRows >  0) {
             res.status(200).json({ 
+                status: 200,
                 mensaje: "El usuario ha sido actualizado." 
             });
         } else {
@@ -111,6 +113,7 @@ export const desactivarUsuario = async (req, res) => {
         
         if (result.affectedRows >  0) {
             res.status(200).json({
+                status: 200,
                 "mensaje": "El usuario con el id "+id_ususario+" ha sido desactivado."
             });
         } else {
@@ -126,4 +129,3 @@ export const desactivarUsuario = async (req, res) => {
         });
     }
 }
-

@@ -26,7 +26,7 @@ export const crearactividades = async (req, res) => {
 
         if (resultado.affectedRows > 0) {
             res.status(200).json({
-                "mensaje": "actividad puesta con exito"
+                "mensaje": "actividad registrada con exito"
             })
         } else {
             res.status(400).json({

@@ -21,8 +21,8 @@ export const listarcostos = async (req, res) =>{
 
 export const crearcostos = async (req, res) => {
     try {
-        const {nombre_produc, cantidad, costos, informe_costos, fk_produc_actividad} = req.body
-        const [resultado] = await pool.query("insert into costos(nombre_produc, cantidad, costos, informe_costos, fk_produc_actividad) values (?,?,?,?,?)", [nombre_produc, cantidad, costos, informe_costos, fk_produc_actividad])
+        const {nombre_produc, cantidad, costo, informe_costos, fk_produc_actividad} = req.body
+        const [resultado] = await pool.query("insert into costos(nombre_produc, cantidad, costo, informe_costos, fk_produc_actividad) values (?,?,?,?,?)", [nombre_produc, cantidad, costo, informe_costos, fk_produc_actividad])
 
         if (resultado.affectedRows > 0) {
             res.status(200).json({
@@ -43,9 +43,9 @@ export const crearcostos = async (req, res) => {
 export const actualizarcostos = async (req,res) => {
     try {
         const {id_productos} = req.params
-        const {nombre_produc, cantidad, costos, informe_costos, fk_produc_actividad} = req.body
+        const {nombre_produc, cantidad, costo, informe_costos, fk_produc_actividad} = req.body
         const [ oldUser ] = await pool.query("select * from costos where id_productos=?", [id_productos])
-        const [ resultado ] =await pool.query(`update costos set nombre_produc='${nombre_produc?nombre_produc:oldUser[0].nombre_produc}', cantidad='${cantidad?cantidad:oldUser[0].cantidad}', costos='${costos?costos:oldUser[0].costos}', informe_costos='${informe_costos?informe_costos:oldUser[0].informe_costos}', fk_produc_actividad='${fk_produc_actividad?fk_produc_actividad:oldUser[0].fk_produc_actividad}' where id_productos=${parseInt(id_productos)}`)
+        const [ resultado ] =await pool.query(`update costos set nombre_produc='${nombre_produc?nombre_produc:oldUser[0].nombre_produc}', cantidad='${cantidad?cantidad:oldUser[0].cantidad}', costos='${costo?costo:oldUser[0].costo}', informe_costos='${informe_costos?informe_costos:oldUser[0].informe_costos}', fk_produc_actividad='${fk_produc_actividad?fk_produc_actividad:oldUser[0].fk_produc_actividad}' where id_productos=${parseInt(id_productos)}`)
 
         if (resultado.aproductosRows > 0) {
             res.status(200).json({
