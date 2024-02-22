@@ -33,8 +33,6 @@ export const listar = async (req,res) => {
   
   };
   
-
-
   export const desactivar = async (req, res) => {
     try {
       const { id_finca } = req.params;
@@ -54,7 +52,6 @@ export const listar = async (req,res) => {
     }
   };
   
-
   export const actualizar = async (req, res) => {
     try {
       const { id_finca } = req.params;
