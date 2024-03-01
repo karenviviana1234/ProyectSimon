@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Documentación de la api simon</title>
+</head>
+<body>
+    
+    <h1>Requerimiento 5. Documentacion COSTOS</h1>
+    <table>
+        <tr><td>NUMERO</td><td>1</td></tr>
+        <tr><td>NOMBRE DEL SERVICIO</td><td>listarcostos</td></tr>
+        <tr><td>URI</td><td>/costos</td></tr>
+        <tr><td>DESCRIPCION</td><td>permite listar a los costos registrados en la base de datos</td></tr>
+        <tr><td>VERBO HTTP</td><td>GET</td></tr>
+        <tr><td>HEADER</td><td>null</td></tr>
+        <tr><td>USUARIO</td><td>administrador</td></tr>
+        <tr><td>REUEST json/ PETICION BODY</td><td>{"nombre_produc":"abono especial"}</td></tr>
+        <tr><td>RESPUESTA json</td><td>
+            correcto:
+            status:200
+            json:
+            {
+                "id_productos": 1,
+                "nombre_produc": "abono especial",
+                "cantidad": 15,
+                "costo": 700000,
+                "informe_costo": null,
+                "fk_produc_actividad": null
+              },
+
+              incorrecto:
+              status:404
+              body:{
+                status:404
+                "mensaje": "no se pudo mostar hay algun error"
+              }
+
+              error:
+              status:500
+              body:{
+                "mensaje":error
+              }
+
+        </td></tr>
+        <tr>REALIZACION DE ACTIVIDAD<td></td><td>KEVIN FERNANDO ANDRADE MAHECHA </td></tr>
+        <tr>RAMA GITHUB<td></td><td> devkfam </td></tr>
+    </table>
+
+
+    <table>
+      <tr><td>NUMERO</td><td>2</td></tr>
+      <tr><td>NOMBRE DEL SERVICIO</td><td>crearcostos</td></tr>
+      <tr><td>URI</td><td>/costos</td></tr>
+      <tr><td>DESCRIPCION</td><td>permite crear costos subiendolos a la base de datos</td></tr>
+      <tr><td>VERBO HTTP</td><td>POST</td></tr>
+      <tr><td>HEADER</td><td>null</td></tr>
+      <tr><td>USUARIO</td><td>administrador</td></tr>
+      <tr><td>REUEST json/ PETICION BODY</td><td>{"nombre_actividad":""}</td></tr>
+      <tr><td>RESPUESTA json</td><td>
+          correcto:
+          status:200
+          json:
+          {
+            "mensaje": "costo puesto con exito"
+        },
+
+            incorrecto:
+            status:404
+            body:{
+              status:404
+              "mensaje": "hay un error no se pudo guardar"
+            }
+
+            error:
+            status:500
+            body:{
+              "mensaje":error
+            }
+
+      </td></tr>
+      <tr>REALIZACION DE ACTIVIDAD<td></td><td>KEVIN FERNANDO ANDRADE MAHECHA </td></tr>
+      <tr>RAMA GITHUB<td></td><td> devkfam </td></tr>
+  </table>
+
+  <table>
+    <tr><td>NUMERO</td><td>3</td></tr>
+    <tr><td>NOMBRE DEL SERVICIO</td><td>actualizarcostos</td></tr>
+    <tr><td>URI</td><td>/costo/3</td></tr>
+    <tr><td>DESCRIPCION</td><td>permite modificar informacion en los costos registrados en la base de datos</td></tr>
+    <tr><td>VERBO HTTP</td><td>PUT</td></tr>
+    <tr><td>HEADER</td><td>null</td></tr>
+    <tr><td>USUARIO</td><td>administrador</td></tr>
+    <tr><td>REUEST json/ PETICION BODY</td><td>{"nombre_actividad":""}</td></tr>
+    <tr><td>RESPUESTA json</td><td>
+        correcto:
+        status:200
+        json:
+        {
+          "mensaje": "los costos han sido actualizado"
+        },
+
+          incorrecto:
+          status:404
+          body:{
+            status:404
+            "mensaje": "No se pudo actualizar los costos"
+          }
+
+          error:
+          status:500
+          body:{
+            "mensaje":error
+          }
+
+    </td></tr>
+    <tr>REALIZACION DE ACTIVIDAD<td></td><td>KEVIN FERNANDO ANDRADE MAHECHA </td></tr>
+    <tr>RAMA GITHUB<td></td><td> devkfam </td></tr>
+</table>
+
+<table>
+  <tr><td>NUMERO</td><td>4</td></tr>
+  <tr><td>NOMBRE DEL SERVICIO</td><td>mostrarcostos</td></tr>
+  <tr><td>URI</td><td>/costos/2</td></tr>
+  <tr><td>DESCRIPCION</td><td>permite mostar costos especificos registrados en la base de datos</td></tr>
+  <tr><td>VERBO HTTP</td><td>GET</td></tr>
+  <tr><td>HEADER</td><td>null</td></tr>
+  <tr><td>USUARIO</td><td>administrador</td></tr>
+  <tr><td>REUEST json/ PETICION BODY</td><td>{"nombre_produc":"veneno"}</td></tr>
+  <tr><td>RESPUESTA json</td><td>
+      correcto:
+      status:200
+      json:
+      {
+        "id_productos": 2,
+        "nombre_produc": "veneno",
+        "cantidad": 4,
+        "costo": 80000,
+        "informe_costo": null,
+        "fk_produc_actividad": null
+      }
+
+        incorrecto:
+        status:404
+        body:{
+          status:404
+          "mensaje": "No se encontró ese costos con ese ID"
+        }
+
+        error:
+        status:500
+        body:{
+          "mensaje":error
+        }
+
+  </td></tr>
+  <tr>REALIZACION DE ACTIVIDAD<td></td><td>KEVIN FERNANDO ANDRADE MAHECHA </td></tr>
+  <tr>RAMA GITHUB<td></td><td> devkfam </td></tr>
+</table>
+
+<table>
+  <tr><td>NUMERO</td><td>5</td></tr>
+  <tr><td>NOMBRE DEL SERVICIO</td><td>eliminarcostos</td></tr>
+  <tr><td>URI</td><td>/costosproduc/3</td></tr>
+  <tr><td>DESCRIPCION</td><td>permite eliminar los costos registrados en la base de datos</td></tr>
+  <tr><td>VERBO HTTP</td><td>DELETE</td></tr>
+  <tr><td>HEADER</td><td>null</td></tr>
+  <tr><td>USUARIO</td><td>administrador</td></tr>
+  <tr><td>REUEST json/ PETICION BODY</td><td>{"id_actividades":"3"}</td></tr>
+  <tr><td>RESPUESTA json</td><td>
+      correcto:
+      status:200
+      json:
+      {
+        "mensaje": "Haz eliminado con exito el costo"
+    },
+
+        incorrecto:
+        status:404
+        body:{
+          status:404
+          "mensaje": "No se encontró esos costos con ese ID y no se puedo eliminar"
+        }
+
+        error:
+        status:500
+        body:{
+          "mensaje":error
+        }
+
+  </td></tr>
+  <tr>REALIZACION DE ACTIVIDAD<td></td><td>KEVIN FERNANDO ANDRADE MAHECHA </td></tr>
+  <tr>RAMA GITHUB<td></td><td> devkfam </td></tr>
+</table>
+    
+</body>
+</html>
